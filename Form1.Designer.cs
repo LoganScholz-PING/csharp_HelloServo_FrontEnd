@@ -58,6 +58,10 @@ namespace ServoAndEncoderHello_FrontEnd
             this.label4 = new System.Windows.Forms.Label();
             this.btnLoadCellPlus1000 = new System.Windows.Forms.Button();
             this.btnLoadCellMinus1000 = new System.Windows.Forms.Button();
+            this.btnEEPROMREAD = new System.Windows.Forms.Button();
+            this.btnEEPROMCANCEL = new System.Windows.Forms.Button();
+            this.btnEEPROMZERO = new System.Windows.Forms.Button();
+            this.btnEEPROMREADSELECT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMTRSTART
@@ -106,7 +110,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(7, 673);
+            this.label1.Location = new System.Drawing.Point(5, 894);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 15);
             this.label1.TabIndex = 4;
@@ -115,7 +119,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // lblSTATUS
             // 
             this.lblSTATUS.AutoSize = true;
-            this.lblSTATUS.Location = new System.Drawing.Point(60, 673);
+            this.lblSTATUS.Location = new System.Drawing.Point(58, 894);
             this.lblSTATUS.Name = "lblSTATUS";
             this.lblSTATUS.Size = new System.Drawing.Size(66, 15);
             this.lblSTATUS.TabIndex = 5;
@@ -124,7 +128,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // comboBoxSerialPorts
             // 
             this.comboBoxSerialPorts.FormattingEnabled = true;
-            this.comboBoxSerialPorts.Location = new System.Drawing.Point(7, 637);
+            this.comboBoxSerialPorts.Location = new System.Drawing.Point(5, 858);
             this.comboBoxSerialPorts.Name = "comboBoxSerialPorts";
             this.comboBoxSerialPorts.Size = new System.Drawing.Size(150, 23);
             this.comboBoxSerialPorts.TabIndex = 7;
@@ -134,7 +138,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(7, 619);
+            this.label2.Location = new System.Drawing.Point(5, 840);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 15);
             this.label2.TabIndex = 8;
@@ -147,12 +151,12 @@ namespace ServoAndEncoderHello_FrontEnd
             this.textBoxSerialData.Name = "textBoxSerialData";
             this.textBoxSerialData.ReadOnly = true;
             this.textBoxSerialData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSerialData.Size = new System.Drawing.Size(428, 604);
+            this.textBoxSerialData.Size = new System.Drawing.Size(428, 825);
             this.textBoxSerialData.TabIndex = 9;
             // 
             // btnDumpOutput
             // 
-            this.btnDumpOutput.Location = new System.Drawing.Point(511, 619);
+            this.btnDumpOutput.Location = new System.Drawing.Point(509, 840);
             this.btnDumpOutput.Name = "btnDumpOutput";
             this.btnDumpOutput.Size = new System.Drawing.Size(87, 46);
             this.btnDumpOutput.TabIndex = 10;
@@ -162,7 +166,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // 
             // btnToggleCOM
             // 
-            this.btnToggleCOM.Location = new System.Drawing.Point(166, 620);
+            this.btnToggleCOM.Location = new System.Drawing.Point(164, 841);
             this.btnToggleCOM.Name = "btnToggleCOM";
             this.btnToggleCOM.Size = new System.Drawing.Size(74, 45);
             this.btnToggleCOM.TabIndex = 11;
@@ -172,7 +176,7 @@ namespace ServoAndEncoderHello_FrontEnd
             // 
             // btnClearLog
             // 
-            this.btnClearLog.Location = new System.Drawing.Point(604, 619);
+            this.btnClearLog.Location = new System.Drawing.Point(602, 840);
             this.btnClearLog.Name = "btnClearLog";
             this.btnClearLog.Size = new System.Drawing.Size(79, 46);
             this.btnClearLog.TabIndex = 12;
@@ -356,11 +360,60 @@ namespace ServoAndEncoderHello_FrontEnd
             this.btnLoadCellMinus1000.UseVisualStyleBackColor = true;
             this.btnLoadCellMinus1000.Click += new System.EventHandler(this.btnLoadCellMinus1000_Click);
             // 
+            // btnEEPROMREAD
+            // 
+            this.btnEEPROMREAD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEEPROMREAD.Location = new System.Drawing.Point(12, 648);
+            this.btnEEPROMREAD.Name = "btnEEPROMREAD";
+            this.btnEEPROMREAD.Size = new System.Drawing.Size(104, 41);
+            this.btnEEPROMREAD.TabIndex = 30;
+            this.btnEEPROMREAD.Text = "READ EEPROM Contents";
+            this.btnEEPROMREAD.UseVisualStyleBackColor = true;
+            this.btnEEPROMREAD.Click += new System.EventHandler(this.btnEEPROMREAD_Click);
+            // 
+            // btnEEPROMCANCEL
+            // 
+            this.btnEEPROMCANCEL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEEPROMCANCEL.Location = new System.Drawing.Point(122, 648);
+            this.btnEEPROMCANCEL.Name = "btnEEPROMCANCEL";
+            this.btnEEPROMCANCEL.Size = new System.Drawing.Size(104, 41);
+            this.btnEEPROMCANCEL.TabIndex = 31;
+            this.btnEEPROMCANCEL.Text = "CANCEL EEPROM READ";
+            this.btnEEPROMCANCEL.UseVisualStyleBackColor = true;
+            this.btnEEPROMCANCEL.Click += new System.EventHandler(this.btnEEPROMCANCEL_Click);
+            // 
+            // btnEEPROMZERO
+            // 
+            this.btnEEPROMZERO.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEEPROMZERO.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnEEPROMZERO.Location = new System.Drawing.Point(122, 695);
+            this.btnEEPROMZERO.Name = "btnEEPROMZERO";
+            this.btnEEPROMZERO.Size = new System.Drawing.Size(104, 41);
+            this.btnEEPROMZERO.TabIndex = 32;
+            this.btnEEPROMZERO.Text = "ZERO EEPROM DATA";
+            this.btnEEPROMZERO.UseVisualStyleBackColor = true;
+            this.btnEEPROMZERO.Click += new System.EventHandler(this.btnEEPROMZERO_Click);
+            // 
+            // btnEEPROMREADSELECT
+            // 
+            this.btnEEPROMREADSELECT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEEPROMREADSELECT.Location = new System.Drawing.Point(12, 695);
+            this.btnEEPROMREADSELECT.Name = "btnEEPROMREADSELECT";
+            this.btnEEPROMREADSELECT.Size = new System.Drawing.Size(104, 41);
+            this.btnEEPROMREADSELECT.TabIndex = 33;
+            this.btnEEPROMREADSELECT.Text = "READ SELECT EEPROM";
+            this.btnEEPROMREADSELECT.UseVisualStyleBackColor = true;
+            this.btnEEPROMREADSELECT.Click += new System.EventHandler(this.btnEEPROMREADSELECT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 689);
+            this.ClientSize = new System.Drawing.Size(684, 912);
+            this.Controls.Add(this.btnEEPROMREADSELECT);
+            this.Controls.Add(this.btnEEPROMZERO);
+            this.Controls.Add(this.btnEEPROMCANCEL);
+            this.Controls.Add(this.btnEEPROMREAD);
             this.Controls.Add(this.btnLoadCellMinus1000);
             this.Controls.Add(this.btnLoadCellPlus1000);
             this.Controls.Add(this.label4);
@@ -428,6 +481,10 @@ namespace ServoAndEncoderHello_FrontEnd
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLoadCellPlus1000;
         private System.Windows.Forms.Button btnLoadCellMinus1000;
+        private System.Windows.Forms.Button btnEEPROMREAD;
+        private System.Windows.Forms.Button btnEEPROMCANCEL;
+        private System.Windows.Forms.Button btnEEPROMZERO;
+        private System.Windows.Forms.Button btnEEPROMREADSELECT;
     }
 }
 

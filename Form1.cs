@@ -395,6 +395,62 @@ namespace ServoAndEncoderHello_FrontEnd
         }
         /********** end load cell calibration functions **********/
 
+        private void btnEEPROMREAD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Begin printing first 80 bytes of arduino EEPROM to serial
+                _serialPortMEGA.Write("<b>");
+            }
+            catch
+            {
+                //MessageBox.Show(ex.Message); // to use this add "Exception ex" to the catch ()
+                lblSTATUS.Text = "ERROR READING EEPROM DATA - CHECK CONNECTION";
+            }
+        }
+
+        private void btnEEPROMZERO_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Zero out first 80 bytes of arduino EEPROM to 0000 0000
+                _serialPortMEGA.Write("<c>");
+            }
+            catch
+            {
+                //MessageBox.Show(ex.Message); // to use this add "Exception ex" to the catch ()
+                lblSTATUS.Text = "ERROR ZEROING EEPROM DATA - CHECK CONNECTION";
+            }
+        }
+
+        private void btnEEPROMREADSELECT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Read only parts of EEPROM we care about
+                _serialPortMEGA.Write("<d>");
+            }
+            catch
+            {
+                //MessageBox.Show(ex.Message); // to use this add "Exception ex" to the catch ()
+                lblSTATUS.Text = "ERROR READING SELECT EEPROM DATA - CHECK CONNECTION";
+            }
+        }
+
+
+        private void btnEEPROMCANCEL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cancel out of the read EEPROM memory loop
+                _serialPortMEGA.Write("x");
+            }
+            catch
+            {
+                //MessageBox.Show(ex.Message); // to use this add "Exception ex" to the catch ()
+                lblSTATUS.Text = "ERROR CANCELLING READ EEPROM MEMORY LOOP - CHECK CONNECTION";
+            }
+        }
 
         private void comboBoxSerialPorts_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -485,8 +541,6 @@ namespace ServoAndEncoderHello_FrontEnd
             {
                 textBoxSerialData.Clear();
             }           
-        }
-
-        
+        } 
     }
 }
